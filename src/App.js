@@ -8,13 +8,11 @@ import CrossLight from "./MovesImages/CrossLight.svg";
 
 function App() {
   const [player, setPlayer] = useState(Math.random() >= 0.5);
+  console.log(player);
+  let current = player;
   const [names, setNames] = useState(["Player 1 ", "Player 2 "]);
   const [draw, setDraw] = useState(false);
-
   const [proceed, setProceed] = useState(true);
-
-  let O = <img src={CircleDark} alt="O" />;
-  let X = <img src={CrossDark} alt="X" />;
 
   const NamesHandler = (e, i) => {
     let newNames = [...names];
@@ -92,8 +90,9 @@ function App() {
             names={names}
             setNames={setNames}
             Result={Result}
-            CircleDark={CircleDark}
+            CircleDark={CircleDark} 
             CrossDark={CrossDark}
+            current={current}
           />
 
           <h3>
